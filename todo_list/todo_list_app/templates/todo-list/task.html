@@ -10,23 +10,23 @@
    border-radius: 4px;
    width: 10rem;
    height: 10rem;
-
-
-  
    
 }
-
 </style>
+
+
 <div class="row w-100 pl-4">
-    <div class="d-flex justify-content-between">
-        <div>
-            <div style="padding-left: 1rem;font-size: 2rem;font-weight: bolder;">All Tasks </div>
-            <div><span style="font-size: 15px;padding-left: 1rem;">{{formatted_date}},{% now "jS F " %}</span></div>
-        </div>
-        <div><a href="{% url 'create_task' %}"><button type="button"
-                    class="btn btn-outline-success margin-right: 1rem;"
-                    data-mdb-ripple-color="dark"><i class="fa fa-plus"
-                        aria-hidden="true"></i><span>Add</span></button></a>
+    <div class="d-flex justify-content-end mb-3">
+        
+        <div class="d-flex ">
+            <form action="" method="get">
+                <div class="input-group rounded">
+                    <input type="text" name="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" value="{{search_input}}" />
+                    <input class="btn btn-outline-primary" type="submit" value="Search">
+                </div>
+            </form>
+
+            <a href="{% url 'create_task' %}"><button type="button" class="btn btn-outline-success margin-right: 0.5rem;" style="margin-left: 1rem;" data-mdb-ripple-color="dark"><i class="fa fa-plus"aria-hidden="true"></i><span>Add</span></button></a>
         </div>
     </div>
 

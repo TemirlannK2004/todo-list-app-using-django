@@ -14,6 +14,8 @@ urlpatterns = [
     path('update_task/<int:pk>/',TaskUpdate.as_view(),name='update_task'),
     path('delete_task/<int:pk>/',TaskDelete.as_view(),name='delete_task'),
     path('login/',Login.as_view(),name='login'),
+    path('register/',Register.as_view(),name='register'),
+
      path('logout/',LogoutView.as_view(next_page='login'),name='logout'),
 
 ]

@@ -10,16 +10,11 @@
 text-decoration: none;
 color: white;}
 </style>
-
+<p style="text-align: center;">{{form_name}}</p>
 <div class=" d-flex align-items-center justify-content-center ">
     <form action method="post" class="shadow-sm p-3 mb-5 bg-white rounded">
         {% csrf_token %}
-      
-
-        {{form.title|as_crispy_field}}
-        {{form.description|as_crispy_field}}
-        {{form.complete|as_crispy_field}}
-
+        {{ form|crispy }}
         <div class="d-flex justify-content-between">
             <button type="button" class="btn btn-danger"><a
                     href="{% url 'tasks' %}">&#8592; Go Back</a></button>

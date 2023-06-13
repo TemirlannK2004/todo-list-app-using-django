@@ -23,27 +23,21 @@
     </head>
     <body>
         <header>
-            <div class="m-4">
+            <div class="m-4" >
                 <ul class="nav nav-pills mb-5">
                     <li class="nav-item">
                         <a href="{% url 'tasks' %}" class="nav-link active">Home</a>
                     </li>
-                    
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Messages</a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Inbox</a>
-                            <a href="#" class="dropdown-item">Drafts</a>
-                            <a href="#" class="dropdown-item">Sent Items</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">Trash</a>
-                        </div>
+                    <li class="nav-item">
+                        <a href="{% url 'tasks' %}" class="nav-link disabled">{{formatted_date}},{% now "jS F " %}</a>
                     </li>
+
+                    
+                   
                     <li class="nav-item dropdown ms-auto">
                         {%if request.user.is_authenticated%}
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{request.user}}</a>
                         <div class="dropdown-menu dropdown-menu-end">
-                            <a href="#" class="dropdown-item">Reports</a>
                             <a href="#" class="dropdown-item">Settings</a>
                             <div class="dropdown-divider"></div>
                             <a href="{% url 'logout' %}" class="dropdown-item"><button type="button" class="btn btn-outline-danger">Logout</button>
@@ -62,15 +56,15 @@
             <div
                 class=" row m-4 p-5 pb-md-5 shadow-lg p-3 mb-4 bg-primary rounded  ">
                 <div class="col ">
-                    <div
-                        class=" p-1 h1 text-primary text-center mx-auto display-inline-block">
+                    <div style="width: 100%;" class=" p-1 h1 text-primary text-center mx-auto display-inline-block">
                         <div>
                             <i class="fa fa-check-circle-o text-white"
                                 aria-hidden="true"></i>
 
                             <u class="text-white "
-                                style="text-decoration: none;">My ToDo List</u>
+                                style="text-decoration: none;">ToDo List</u>
                         </div>
+                        
                     </div>
                 </div>
             </div>
