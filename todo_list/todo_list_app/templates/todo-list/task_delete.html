@@ -2,36 +2,37 @@
 {% load static %}
 {% block content %}
 
-<style>
-    a:hover {
-text-decoration: none;
-color: white;}
-</style>
+    <style>
+        a:hover {
+            text-decoration: none;
+            color: white;}
+    </style>
 
-<div class="card-body">
-    <form method="POST">
-        {% csrf_token %}
-        
-        <div class="w-100 d-flex justify-content-center align-items-center "> 
-            <ul class="list-group" style="width: 40rem;">
-                <li class="list-group-item active">Are your sure you want to delete this task? <b>"{{task}}"</li>
-                <li class="list-group-item">Title:{{task.title}}</li>
-                <li class="list-group-item">Description: {% if task.description %} {{ task.description }} {% else %} None {% endif %}</li>
-                <li class="list-group-item">Status:{% if not task.complete %} Not Completed   {%else%}   Completed   {%endif%}</li>                 
-              
-                <li class="list-group-item">
-                    <div class="d-flex justify-content-between">
-                    <button class="btn btn-danger" type="submit" value="Delete">Delete</button>      
-                    <button type="button" class="btn btn-primary"><a href="{% url 'tasks' %}" >&#8592; Go Back</a></button>
+    <div class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+            
 
-                    </div>            
-                </li> 
-        
-            </ul>
+            <div class="w-100 d-flex justify-content-center align-items-center ">
+                <ul class="list-group" style="width: 40rem;">
+                    <li class="list-group-item active">Are your sure you want to delete this task? <b>"{{task}}"</li>
+                        <li class="list-group-item">Title:{{task.title}}</li>
+                        <li class="list-group-item">Description: {% if task.description %} {{ task.description }} {% else %} None {% endif %}</li>
+                        <li class="list-group-item">Status:{% if not task.complete %} Not Completed   {%else%}   Completed   {%endif%}</li>
+
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-danger" type="submit" value="Delete">Delete</button>
+                                <button type="button" class="btn btn-primary"><a href="{% url 'tasks' %}" >&#8592; Go Back</a></button>
+
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+            </form>
         </div>
-
-        
-    </form>
-</div>
 
 {% endblock content %}
